@@ -990,11 +990,13 @@ p {
   transform: translateY(0);
 }
 
-/* Always show overlay on touch devices */
+/* Always show overlay on touch/mobile devices */
 @media (hover: none) {
   .portfolio-card .portfolio-card-overlay {
     opacity: 1;
     transform: translateY(0);
+    background: linear-gradient(170deg, rgba(0,0,0,0.05), rgba(0,0,0,0.88));
+    padding: 20px;
   }
 }
 
@@ -1032,6 +1034,7 @@ p {
   justify-content: center;
   background: linear-gradient(135deg, var(--bg-elevated), var(--bg-card));
   font-size: 3rem;
+  position: relative;
 }
 
 /* ============================================================
@@ -2167,11 +2170,45 @@ p {
   }
 
   .grid-3,
-  .portfolio-grid-home,
   .portfolio-list,
   .stats-grid,
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Portfolio home: single big column on tablet for better readability */
+  .portfolio-grid-home {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .portfolio-grid-home .portfolio-card {
+    aspect-ratio: 16/9;
+  }
+
+  .portfolio-grid-home .portfolio-placeholder {
+    font-size: 4rem;
+  }
+
+  .portfolio-grid-home .portfolio-card-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    padding: 24px;
+  }
+
+  .portfolio-grid-home .portfolio-card-overlay h3 {
+    font-size: 1.25rem;
+  }
+
+  .portfolio-grid-home .portfolio-card-overlay p {
+    font-size: 0.9rem;
+  }
+
+  /* Portfolio section header stacks on mobile */
+  .portfolio-preview > .container > div:first-child {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 16px;
   }
 
@@ -2298,11 +2335,39 @@ p {
 
   /* ── Grids → single column on smallest screens ── */
   .grid-3,
-  .portfolio-grid-home,
   .portfolio-list,
   .stats-grid,
   .values-grid {
     grid-template-columns: 1fr;
+  }
+
+  .portfolio-grid-home {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .portfolio-grid-home .portfolio-card {
+    aspect-ratio: 4/3;
+    min-height: 220px;
+  }
+
+  .portfolio-grid-home .portfolio-placeholder {
+    font-size: 3.5rem;
+  }
+
+  .portfolio-grid-home .portfolio-card-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    padding: 18px;
+  }
+
+  .portfolio-grid-home .portfolio-card-overlay h3 {
+    font-size: 1.1rem;
+  }
+
+  .portfolio-grid-home .portfolio-tag {
+    font-size: 0.68rem;
+    padding: 4px 10px;
   }
 
   /* ── Hero ── */
