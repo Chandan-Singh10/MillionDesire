@@ -2142,6 +2142,16 @@ p {
   .service-3col {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* ── Contact page: tighten gap on tablet ── */
+  .contact-inner {
+    gap: 40px;
+  }
+
+  .map-wrap {
+    height: 300px;
+    margin-top: 48px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2260,9 +2270,31 @@ p {
     font-size: 2.2rem;
   }
 
-  /* ── Contact form ── */
+  /* ── Contact page ── */
+  .contact-inner {
+    gap: 24px;
+  }
+
+  .contact-info h2.section-title {
+    font-size: 1.5rem !important;
+  }
+
   .contact-form-wrap {
-    padding: 24px;
+    padding: 28px 24px;
+  }
+
+  .map-wrap {
+    height: 240px;
+    margin-top: 40px !important;
+  }
+
+  .map-placeholder h3 {
+    font-size: 1rem !important;
+  }
+
+  /* ── FAQ cards on tablet ── */
+  .contact-page-faq .card {
+    padding: 20px 24px !important;
   }
 
   /* ── Footer ── */
@@ -2428,9 +2460,44 @@ p {
     font-size: clamp(1.5rem, 6vw, 2rem);
   }
 
-  /* ── Contact form wrap ── */
+  /* ── Contact page small screens ── */
   .contact-form-wrap {
     padding: 20px 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .contact-form-wrap h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-form-wrap > p {
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 12px 14px;
+    font-size: 0.875rem;
+  }
+
+  .map-wrap {
+    height: 200px;
+    margin-top: 32px !important;
+  }
+
+  .map-placeholder svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .map-placeholder h3 {
+    font-size: 0.95rem !important;
+  }
+
+  .map-placeholder p {
+    font-size: 0.8rem !important;
   }
 
   /* ── WhatsApp button: smaller on tiny phones ── */
@@ -2453,6 +2520,57 @@ p {
     gap: 14px;
   }
 }
+
+/* ============================================================
+   CONTACT PAGE — DEDICATED RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Page-hero heading on contact */
+  .page-hero h1 {
+    font-size: clamp(1.7rem, 6vw, 2.4rem);
+  }
+
+  .page-hero p {
+    font-size: 0.95rem;
+  }
+
+  /* FAQ cards: reduce side padding */
+  .section .card[style*="padding:28px 32px"] {
+    padding: 20px 20px !important;
+  }
+
+  /* Submit button: touch-friendly */
+  .contact-form-wrap .btn-primary {
+    padding: 14px !important;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Page-hero on tiny phones */
+  .page-hero h1 {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .page-hero-inner {
+    text-align: center;
+  }
+
+  .breadcrumb {
+    justify-content: center;
+  }
+
+  /* FAQ cards: minimal padding on tiny screens */
+  .section .card[style*="padding:28px 32px"] {
+    padding: 16px !important;
+  }
+
+  /* Contact info heading */
+  .contact-info .section-title {
+    font-size: 1.3rem !important;
+  }
+}
+
 
 /* ============================================================
    VIDEO TESTIMONIALS
