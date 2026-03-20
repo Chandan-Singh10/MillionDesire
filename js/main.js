@@ -182,10 +182,11 @@
       btn.disabled = true;
 
       const formData = new FormData(contactForm);
-      formData.append('_captcha', 'false');
-      formData.append('_subject', 'New Lead from Million Desire');
+      // Replace YOUR_WEB3FORMS_ACCESS_KEY with your actual Web3Forms access key
+      formData.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY');
+      formData.append('subject', 'New Lead from Million Desire');
 
-      fetch("https://formsubmit.co/ajax/browserinfotech@gmail.com", {
+      fetch("https://api.web3forms.com/submit", {
           method: "POST",
           body: formData,
           headers: {
@@ -194,8 +195,8 @@
       })
       .then(response => response.json())
       .then(data => {
-          if (data.success === "false" || data.success === false) {
-              throw new Error(data.message || "FormSubmit rejected the request.");
+          if (!data.success) {
+              throw new Error(data.message || "Web3Forms rejected the request.");
           }
           contactForm.style.display = 'none';
           if (formSuccess) formSuccess.style.display = 'block';
