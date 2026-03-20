@@ -2223,8 +2223,12 @@ p {
   }
 
   /* ── Hero ── */
+  .hero-shapes {
+    display: none;
+  }
+
   .hero h1 {
-    font-size: clamp(1.9rem, 7vw, 2.8rem);
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
   }
 
   .hero-sub {
@@ -2236,6 +2240,17 @@ p {
     font-size: 0.72rem;
     padding: 7px 14px;
     margin-bottom: 22px;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .hero-stats {
