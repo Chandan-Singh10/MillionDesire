@@ -177,12 +177,32 @@
       });
       if (!valid) return;
       const btn = contactForm.querySelector('button[type="submit"]');
+      const originalBtnText = btn.innerHTML;
       btn.textContent = 'Sending…';
       btn.disabled = true;
-      setTimeout(() => {
-        contactForm.style.display = 'none';
-        if (formSuccess) formSuccess.style.display = 'block';
-      }, 1500);
+
+      const formData = new FormData(contactForm);
+      formData.append('_captcha', 'false');
+      formData.append('_subject', 'New Lead from Million Desire');
+
+      fetch("https://formsubmit.co/ajax/browserinfotech@gmail.com", {
+          method: "POST",
+          body: formData,
+          headers: {
+              'Accept': 'application/json'
+          }
+      })
+      .then(response => response.json())
+      .then(data => {
+          contactForm.style.display = 'none';
+          if (formSuccess) formSuccess.style.display = 'block';
+      })
+      .catch(error => {
+          console.error(error);
+          btn.innerHTML = originalBtnText;
+          btn.disabled = false;
+          alert('There was a problem sending your message. Please try emailing us directly at browserinfotech@gmail.com');
+      });
     });
   }
 
