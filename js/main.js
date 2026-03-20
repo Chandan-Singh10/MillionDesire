@@ -194,6 +194,9 @@
       })
       .then(response => response.json())
       .then(data => {
+          if (data.success === "false" || data.success === false) {
+              throw new Error(data.message || "FormSubmit rejected the request.");
+          }
           contactForm.style.display = 'none';
           if (formSuccess) formSuccess.style.display = 'block';
       })
@@ -201,7 +204,7 @@
           console.error(error);
           btn.innerHTML = originalBtnText;
           btn.disabled = false;
-          alert('There was a problem sending your message. Please try emailing us directly at browserinfotech@gmail.com');
+          alert('There was a problem: ' + error.message + '\n\nPlease try emailing us directly at browserinfotech@gmail.com');
       });
     });
   }
