@@ -183,7 +183,7 @@
 
       const formData = new FormData(contactForm);
       // Replace YOUR_WEB3FORMS_ACCESS_KEY with your actual Web3Forms access key
-      formData.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY');
+      formData.append('access_key', '2698d21e-91d8-44aa-98cf-aaf323735481');
       formData.append('subject', 'New Lead from Million Desire');
 
       fetch("https://api.web3forms.com/submit", {
