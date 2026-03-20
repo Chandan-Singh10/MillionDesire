@@ -185,7 +185,7 @@
       formData.append('_captcha', 'false');
       formData.append('_subject', 'New Lead from Million Desire');
 
-      fetch("https://formsubmit.co/ajax/browserinfotech@gmail.com", {
+      fetch("https://formsubmit.co/ajax/45801797bb1fb69c2047e9a5fd992267", {
           method: "POST",
           body: formData,
           headers: {
@@ -201,7 +201,7 @@
           console.error(error);
           btn.innerHTML = originalBtnText;
           btn.disabled = false;
-          alert('There was a problem sending your message. Please try emailing us directly at browserinfotech@gmail.com');
+          alert('There was a problem sending your message. Please try emailing us directly at support.milliondesire@gmail.com');
       });
     });
   }
