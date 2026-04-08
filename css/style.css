@@ -411,6 +411,13 @@ p {
   margin-left: 12px;
 }
 
+.nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 12px;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -2162,7 +2169,8 @@ p {
 
   /* ── Nav ── */
   .nav-links,
-  .nav-cta {
+  .nav-cta,
+  .nav-cta-group {
     display: none;
   }
 
